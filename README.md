@@ -14,7 +14,7 @@ var RC = new ResizableColumns(
 		columnSelector:'.column',	// css class for columns
 		messageSelector:'.col_msg',	// css class for column header text
 		minWidth:64,				// can't resize smaller than this
-		linkedContainer:'arcGridRows'	// causes the row columns to resize along with the header columns
+		linkedContainer:'grid_rows'	// causes the row columns to resize along with the header columns
 	}
 );
 ```
