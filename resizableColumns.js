@@ -1,51 +1,51 @@
 /*
 Script: resizableColumns.js
-	MooTools Resizable columns - any number of columns.
-	Inspired by, and based on the non-object-oriented work of <Chris Bolson at http://blog.cbolson.com/mootools-expandable-columns/>
+    MooTools Resizable columns - any number of columns.
+    Inspired by, and based on the non-object-oriented work of <Chris Bolson at http://blog.cbolson.com/mootools-expandable-columns/>
 
     
 Copyright:
-	Copyright (c) 2014 Noel da Costa - <http://www.arcsoftware.co.za>
+    Copyright (c) 2014 Noel da Costa - <http://www.arcsoftware.co.za>
 
 Author: Noel da Costa
 
-	
+    
 License:
-	http://creativecommons.org/licenses/by/3.0/
+    http://creativecommons.org/licenses/by/3.0/
     If you copy, distribute or transmit the source code please retain the above copyright notice, author name and project URL.
     
 Version:
-	1.0
+    1.0
 
 Dependencies:
-	- MooTools Core 1.2.3 or newer
-	- MooTools More 1.2.3.1 or newer: Drag.js, Drag.Move.js, 
-	- When using MooTools More 1.2.3.x: Add "Delegation.js" as provided in the Demos/ Folder of the Tree Components
+    - MooTools Core 1.2.3 or newer
+    - MooTools More 1.2.3.1 or newer: Drag.js, Drag.Move.js, 
+    - When using MooTools More 1.2.3.x: Add "Delegation.js" as provided in the Demos/ Folder of the Tree Components
     - NB: don't use borders in your CSS for the columns.. these will cause it to break. Chris's original scrips had a "pad" option to counter-act this but it was written to work with 3 columns only and I've not been able to implement this feature for dynamic multiple columns.
 
 Options:
-	- columnSelector: (string, CSS selector) The selector used to find the columns
-	- messageSelector: (string, CSS selector) The selector used to find the column messages - these are optional elements where actual running widths of columns will be displayed, one per column.
-	- snap: (number) Pixel increments by which the resizing of columns will occur during drag.
-	- minWidth: (number) Minimum column width
-	- borderWidth (number, default:0) Values > 0 will add in an internal border to each column
+    - columnSelector: (string, CSS selector) The selector used to find the columns
+    - messageSelector: (string, CSS selector) The selector used to find the column messages - these are optional elements where actual running widths of columns will be displayed, one per column.
+    - snap: (number) Pixel increments by which the resizing of columns will occur during drag.
+    - minWidth: (number) Minimum column width
+    - borderWidth (number, default:0) Values > 0 will add in an internal border to each column
     - borderStyle (string, default:'solid') as per css border spec.
     - borderColor (string, default:'#000')
     - linkedContainer (string | boolean, default:false) the element id of a container in which to also resize matching columns. Useful for keeping headers static above a vertically scrolling set of data rows.
-	- type (string, default:'float') float | absolute - left edges will be adjusted for type absolute 
-				
+    - type (string, default:'float') float | absolute - left edges will be adjusted for type absolute 
+                
 Events:
-	- onComplete(): fires when the column is done resizing. Can be used to resize contents like form fields.
+    - onComplete(): fires when the column is done resizing. Can be used to resize contents like form fields.
 */
 
 var ResizableColumns = new Class({
     Implements: [Options],
 
     options: {
-        columnSelector: '.resizableColumn', // 	each column should have this css class
-        messageSelector: '.columnMessage', //	selector for writing column widths in
-        snap: 5, //	define snap if required - set to 0 for no snap
-        minWidth: 120, //	minimum column width
+        columnSelector: '.resizableColumn', //  each column should have this css class
+        messageSelector: '.columnMessage', //   selector for writing column widths in
+        snap: 5, // define snap if required - set to 0 for no snap
+        minWidth: 120, //   minimum column width
         borderWidth: 0, //  default: 0; values > 0 will add in an internal border to each column
         borderStyle: 'solid', // as per css border spec.
         borderColor: '#000',
@@ -53,6 +53,7 @@ var ResizableColumns = new Class({
         type: 'float' // float | absolute - left edges will be adjusted for type absolute 
     },
 
+    // collects the columns and makes them resizable
     initialize: function(wrapper, options) {
         var self = this;
         this.setOptions(options);
@@ -75,6 +76,7 @@ var ResizableColumns = new Class({
         }
     },
 
+    // collects attributes for each comment and set's their width, updates column width message
     refresh: function() {
         var self = this;
         var count = 1;
@@ -91,6 +93,7 @@ var ResizableColumns = new Class({
         });
     },
 
+    // works out how wide the other columns should be
     getWidthComplement: function(col) {
         var self = this;
         var width = self.w_total;
@@ -124,6 +127,7 @@ var ResizableColumns = new Class({
         return cols;
     },
 
+    // adds in the handles to the column headers and adds the events to these handles
     makeColumnResizable: function(col) {
         var self = this;
 

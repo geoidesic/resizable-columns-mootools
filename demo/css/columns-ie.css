@@ -1,0 +1,8 @@
+.arcGridWrapper div.footer{
+	height: 25px;
+	width: 100%;
+	padding: 5px 0 0 0;
+	position: relative;
+	margin-top: 320px;
+	background: transparent url(../img/grey30p.png) repeat scroll 0 0;
+}
