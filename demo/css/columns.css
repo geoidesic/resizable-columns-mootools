@@ -86,7 +86,7 @@ div.cell.hover{
 	background: transparent url(../img/incrementer-down.png) repeat scroll 0 0;
 }
 
-.arcGridWrapper .column.header .header {
+.gridWrapper .column.header .header {
 	border-bottom:1px solid #FFFFFF;
 	color:#FFFFFF;
 	padding:4px;
@@ -100,7 +100,7 @@ div.cell.hover{
 
 
 /** File List Controls **/
-.arcGridWrapper div.footer{
+.gridWrapper div.footer{
 	height: 25px;
 	width: 98%;
 	padding: 5px 0 0 0;
@@ -108,34 +108,34 @@ div.cell.hover{
 	top: 350px;
 	background: transparent url(../img/grey30p.png) repeat scroll 0 0;
 }
-.arcGridWrapper div.footer>*{
+.gridWrapper div.footer>*{
 	margin: 0px 10px 0px 10px;
 }
 
-.arcGridWrapper div.pager{
+.gridWrapper div.pager{
 	position:relative;
 	float:left;
 	width: 80px;
 	padding-top: 2px;
 }
-.arcGridWrapper div.pager span.paginationSelected{
+.gridWrapper div.pager span.paginationSelected{
 	color: #ff9000;
 }
-.arcGridWrapper div.pager a.pagination{
+.gridWrapper div.pager a.pagination{
 	color:#fff;
 	text-decoration:none;
 }
-.arcGridWrapper div.perpage{
+.gridWrapper div.perpage{
 	position:relative;
 	float:left;
 	margin: -5px 20px 0 0;
 }
-.arcGridWrapper div.search{
+.gridWrapper div.search{
 	position:relative;
 	line-height: 20px;
 	float:left;
 }
-.arcGridWrapper input#keywordSearch{
+.gridWrapper input#keywordSearch{
 	height: 18px;
 	width: 80px;
 	margin: 1px 0 0 0;
@@ -144,7 +144,7 @@ div.cell.hover{
 	vertical-align:top;
 	float:left;
 }
-.arcGridWrapper input#keywordSearchSubmit{
+.gridWrapper input#keywordSearchSubmit{
 	height: 19px;
 	position:relative;
 	margin: 1px 0 0 4px;
@@ -152,7 +152,7 @@ div.cell.hover{
 	padding: 0px 2px 2px 2px;
 }
 
-.arcGridWrapper div.total{
+.gridWrapper div.total{
 	position:relative;
 	float:right;
 	padding-top: 2px;
