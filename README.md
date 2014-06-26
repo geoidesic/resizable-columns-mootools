@@ -9,7 +9,7 @@ Example Usage:
 =============
 ```
 var RC = new ResizableColumns(
-	'arcGrid',					// container id
+	'grid',					// container id
 	{	
 		columnSelector:'.column',	// css class for columns
 		messageSelector:'.col_msg',	// css class for column header text
