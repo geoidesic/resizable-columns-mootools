@@ -18,3 +18,4 @@ var RC = new ResizableColumns(
 	}
 );
 ```
+Demo: http://bit.ly/1wziuql
