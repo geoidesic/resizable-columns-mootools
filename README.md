@@ -5,8 +5,8 @@ A small library which provides the facility for resizable columns.
 
 Most systems of resizable columns simply increase the overall width of the column container, only changing the column width of the column to the left of the drag-handle. This library keeps the overall width of the column container constant and adjusts instead the width of the columns to either side of the drag handle.
 
-Example Usage:
-=============
+How to Use:
+===========
 ```
 var RC = new ResizableColumns(
 	'grid',					// container id
